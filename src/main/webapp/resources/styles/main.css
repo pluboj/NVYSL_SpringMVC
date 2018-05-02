@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+body { /* background: #008000; */
+		background-image: url("../resources/images/field.png");
+		background-size: 100% 950px;
+}
+.container { 
+	background: white; 
+	width: 50%;
+	height: 850px; 
+	padding-top: 30px;
+	margin-top: 50px;
+}
+
+.main {
+	width:60%; 
+	margin-left:20%;
+}
+a:link {
+    text-decoration: none;
+}
