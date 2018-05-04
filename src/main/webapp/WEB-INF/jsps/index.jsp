@@ -14,7 +14,7 @@
 	<div class="container">
 		<jsp:include page="header.jsp"></jsp:include>
 		
-		<div class="main">
+		<div class="main main-nav">
 			<a href="displayTeam.htm">
 				<button type="button" class="btn btn-default btn-lg btn-block btn-success">Team</button>
 			</a><br>

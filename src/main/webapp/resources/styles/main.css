@@ -2,12 +2,13 @@
 
 body { /* background: #008000; */
 		background-image: url("../resources/images/field.png");
-		background-size: 100% 950px;
+		/* background-size: 100% 950px; */
+		background-size: 100% 100%;
 }
 .container { 
 	background: white; 
 	width: 50%;
-	height: 850px; 
+	height: auto; 
 	padding-top: 30px;
 	margin-top: 50px;
 }
@@ -15,7 +16,17 @@ body { /* background: #008000; */
 .main {
 	width:60%; 
 	margin-left:20%;
+	margin-top: 30px; 
 }
 a:link {
     text-decoration: none;
 }
+.page-title { 
+	font-size: 3.2em; 
+	padding-top: 10px;
+}
+.main-nav {
+	padding-bottom: 50px;
+}
+.pnum { text-align: center; }
+.pname { background: rgb(231, 228, 228); }
