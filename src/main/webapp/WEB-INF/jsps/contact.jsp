@@ -6,26 +6,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>NVYSL-Sharks</title>
+<title>Sharks - ContactUs</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link href="<c:url value="css/main.css" />" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
-		<jsp:include page="header.jsp"></jsp:include>
-		
+	<div class="container main-graphic">
+		<p>
+			<a href="<spring:url value="/" />"
+				class="btn btn-default"> <span
+				class="glyphicon-hand-left glyphicon"></span> back
+			</a>
+		</p>
+	
+		<jsp:include page="page-header.jsp"></jsp:include>
+		<hr>
 		<div class="main main-nav">
-			<a href="<spring:url value="displayTeam" />">
-				<button type="button" class="btn btn-default btn-lg btn-block btn-success">Team</button>
-			</a><br>
-			<a href="<spring:url value="search" />">
-				<button type="button" class="btn btn-default btn-lg btn-block btn-success">Find Player</button>
-			</a><br>
-			<a href="<spring:url value="contact" />">
-				<button type="button" class="btn btn-default btn-lg btn-block btn-info">Contact Us</button>
-			</a><br>
-		</div>
-	</div>
+			 Contact Form
+		</div> <!-- main -->
+		<p>
+			<a href="<spring:url value="/" />"
+				class="btn btn-default"> <span
+				class="glyphicon-hand-left glyphicon"></span> back
+			</a>
+		</p>
+	</div> <!-- container -->
 </body>
 </html>

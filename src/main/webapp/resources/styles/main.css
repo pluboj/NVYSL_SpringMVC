@@ -29,4 +29,11 @@ a:link {
 	padding-bottom: 50px;
 }
 .pnum { text-align: center; }
-.pname { background: rgb(231, 228, 228); }
+.pname { background: rgb(231, 231, 228); }
+.main-graphic {
+	background-image: url("../resources/images/ball.png");
+	background-repeat: no-repeat;
+	 background-position: 50% 70%; 
+}
+table thead th { background: rgb(203, 203, 200); }
+caption { font-size: 180%; }

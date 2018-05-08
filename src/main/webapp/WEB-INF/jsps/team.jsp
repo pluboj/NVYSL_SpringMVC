@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,7 +12,14 @@
 <link href="<c:url value="css/main.css" />" rel="stylesheet">
 </head>
 <body>
-	<div class="container">
+	<div class="container main-graphic">
+		<p>
+			<a href="<spring:url value="/" />"
+				class="btn btn-default"> <span
+				class="glyphicon-hand-left glyphicon"></span> back
+			</a>
+		</p>
+	
 		<jsp:include page="page-header.jsp"></jsp:include>
 		<div class="main">
 			<p class="lead"><strong>Coach: </strong>Tim Jones</p>
@@ -21,7 +29,7 @@
 		<div class="main main-nav">
 			<c:if test="${not empty players}">
 				<table class="table table-bordered">
-					<caption><h3>Goalkeepers</h3></caption>
+					<caption>Goalkeepers</caption>
 					<thead>
 						<tr>
 							<th class="pnum">#</th>
@@ -45,7 +53,7 @@
 				</table>
 				
 				<table class="table table-bordered">
-					<caption><h3>Defenders</h3></caption>
+					<caption>Defenders</caption>
 					<thead>
 						<tr>
 							<th class="pnum">#</th>
@@ -69,7 +77,7 @@
 				</table>
 				
 				<table class="table table-bordered">
-					<caption><h3>Midfielders</h3></caption>
+					<caption>Midfielders</caption>
 					<thead>
 						<tr>
 							<th class="pnum">#</th>
@@ -93,7 +101,7 @@
 				</table>
 				
 				<table class="table table-bordered">
-					<caption><h3>Forwards</h3></caption>
+					<caption>Forwards</caption>
 					<thead>
 						<tr>
 							<th class="pnum">#</th>
@@ -117,7 +125,13 @@
 				</table>
 				
 			</c:if>
-		</div>
-	</div>
+		</div> <!-- main -->
+		<p>
+			<a href="<spring:url value="/" />"
+				class="btn btn-default"> <span
+				class="glyphicon-hand-left glyphicon"></span> back
+			</a>
+		</p>
+	</div> <!-- container -->
 </body>
 </html>
