@@ -44,4 +44,12 @@ public class InMemoryPlayerRepository implements PlayerRepository {
 		
 	}
 
+	@Override
+	public Player getPlayerByNumber(Integer playerNumber) {
+		String SQL = "SELECT * FROM PLAYERS WHERE PLAYER_NUMBER =" + playerNumber;
+		Map<String, Object> params = new HashMap<>();
+		params.put("playerNumber", params);
+		return jdbcTemplate.queryForObject(SQL, params, new PlayerMapper());
+	}
+
 }

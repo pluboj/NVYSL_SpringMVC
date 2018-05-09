@@ -21,4 +21,10 @@ public class PlayerServiceImpl implements PlayerService {
 		return players;
 	}
 
+	@Override
+	public Player getPlayerByNumber(Integer playerNumber) {
+		return playerRepository.getPlayerByNumber(playerNumber);
+	}
+
+	
 }

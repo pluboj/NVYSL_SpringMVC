@@ -43,7 +43,11 @@
 							<c:if test="${player.position.equalsIgnoreCase('Goalkeeper')}">
 								<tr>
 									<td class="pnum pname"><c:out value="${player.playerNumber}"></c:out></td>
-									<td class="pname"><c:out value="${player.firstName} ${player.lastName}"></c:out></td>
+									<td class="pname">
+										<a href=" <spring:url value="player?id=${player.playerNumber}" /> ">
+											<c:out value="${player.firstName} ${player.lastName}"></c:out>
+										</a>
+									</td>
 									<td><c:out value="${player.yearBorn}"></c:out></td>
 									<td><c:out value="${player.height}"></c:out></td>
 								</tr>
@@ -67,7 +71,11 @@
 							<c:if test="${player.position.equalsIgnoreCase('Defender')}">
 								<tr>
 									<td class="pnum pname"><c:out value="${player.playerNumber}"></c:out></td>
-									<td class="pname"><c:out value="${player.firstName} ${player.lastName}"></c:out></td>
+									<td class="pname">
+										<a href=" <spring:url value="player?id=${player.playerNumber}" /> ">
+											<c:out value="${player.firstName} ${player.lastName}"></c:out>
+										</a>
+									</td>
 									<td><c:out value="${player.yearBorn}"></c:out></td>
 									<td><c:out value="${player.height}"></c:out></td>
 								</tr>
@@ -91,7 +99,11 @@
 							<c:if test="${player.position.equalsIgnoreCase('Midfielder')}">
 								<tr>
 									<td class="pnum pname"><c:out value="${player.playerNumber}"></c:out></td>
-									<td class="pname"><c:out value="${player.firstName} ${player.lastName}"></c:out></td>
+									<td class="pname">
+										<a href=" <spring:url value="player?id=${player.playerNumber}" /> ">
+											<c:out value="${player.firstName} ${player.lastName}"></c:out>
+										</a>
+									</td>
 									<td><c:out value="${player.yearBorn}"></c:out></td>
 									<td><c:out value="${player.height}"></c:out></td>
 								</tr>
@@ -115,7 +127,11 @@
 							<c:if test="${player.position.equalsIgnoreCase('Forward')}">
 								<tr>
 									<td class="pnum pname"><c:out value="${player.playerNumber}"></c:out></td>
-									<td class="pname"><c:out value="${player.firstName} ${player.lastName}"></c:out></td>
+									<td class="pname">
+										<a href=" <spring:url value="player?id=${player.playerNumber}" /> ">
+											<c:out value="${player.firstName} ${player.lastName}"></c:out>
+										</a>
+									</td>
 									<td><c:out value="${player.yearBorn}"></c:out></td>
 									<td><c:out value="${player.height}"></c:out></td>
 								</tr>

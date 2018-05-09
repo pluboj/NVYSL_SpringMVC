@@ -6,4 +6,5 @@ import com.pluboj.team.domain.Player;
 
 public interface PlayerRepository {
 	List<Player> getAllPlayers();
+	Player getPlayerByNumber(Integer playerNumber);
 }
