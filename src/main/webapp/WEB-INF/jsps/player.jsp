@@ -64,18 +64,14 @@
 							<input type="text" class="form-control pipein" readonly value="${games}" aria-describedby="sizing-addon6">
 						</div>
 						<br>
-						<div class="row">
-							<div class="col-md-12"><label>Download data</label> (open data in new tab)</div>
-						</div>
-						<div class="row">
-							<div class="col-md-1">
-								<a class="btn btn-default" href="<spring:url value="player.xml?id=${player.playerNumber}"/>" 
+						<div>
+							<label>Download data</label> (open data in new tab)
+							<br>
+							<a class="btn btn-default" href="<spring:url value="player.xml?id=${player.playerNumber}"/>" 
 									target="_blank" role="button">Xml</a>
-							</div>
-							<div class="col-md-1">
+							
 								<a class="btn btn-default" href="<spring:url value="player.json?id=${player.playerNumber}"/>" 
 									target="_blank" role="button">Json</a>
-							</div>
 						</div>
 					</c:if>	
 					<c:if test="${empty player}"><h3>No Player Found</h3></c:if>	
