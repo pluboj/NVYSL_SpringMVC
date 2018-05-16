@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -32,16 +33,17 @@ public class InMemoryPlayerRepository implements PlayerRepository {
 
 		@Override
 		public Player mapRow(ResultSet rs, int rowNum) throws SQLException {
-			Player player = new Player();
-			player.setPlayerNumber(rs.getInt("PLAYER_NUMBER"));
-			player.setFirstName(rs.getString("FIRST_NAME"));
-			player.setLastName(rs.getString("LAST_NAME"));
-			player.setYearBorn(rs.getInt("YEAR_BORN"));
-			player.setHeight(rs.getDouble("HEIGHT"));
-			player.setPosition(rs.getString("POSITION"));
-			return player;
-		}
-		
+			
+				Player player = new Player();
+				player.setPlayerNumber(rs.getInt("PLAYER_NUMBER"));
+				player.setFirstName(rs.getString("FIRST_NAME"));
+				player.setLastName(rs.getString("LAST_NAME"));
+				player.setYearBorn(rs.getInt("YEAR_BORN"));
+				player.setHeight(rs.getDouble("HEIGHT"));
+				player.setPosition(rs.getString("POSITION"));
+				return player;
+			
+		}	
 	}
 
 	@Override
@@ -49,7 +51,11 @@ public class InMemoryPlayerRepository implements PlayerRepository {
 		String SQL = "SELECT * FROM PLAYERS WHERE PLAYER_NUMBER =" + playerNumber;
 		Map<String, Object> params = new HashMap<>();
 		params.put("playerNumber", params);
-		return jdbcTemplate.queryForObject(SQL, params, new PlayerMapper());
+		try {
+			return jdbcTemplate.queryForObject(SQL, params, new PlayerMapper());
+		} catch(EmptyResultDataAccessException erdae) {
+			return null;
+		}
 	}
 
 }

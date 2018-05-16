@@ -29,40 +29,56 @@
 				    <h3 class="panel-title">Player's Profile</h3>
 				</div> <!-- panel-heading -->
 				<div class="panel-body">
-				    <div class="thumbnail">
-						<img class="img-responsive" src="<c:url value="/img/player_img.png"></c:url>" alt="player profile image" style="width:30; height:30"/>
-					</div> <!-- thumbnail -->
-					
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon3">Number: </span>
-						<input type="text" class="form-control pipein" readonly value="${player.playerNumber}" aria-describedby="sizing-addon3">
-					</div>
-					<br>
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon1">First Name: </span>
-						<input type="text" class="form-control pipein" readonly value="${player.firstName}" aria-describedby="sizing-addon1">
-					</div>
-					<br>
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon2">Last Name: </span>
-						<input type="text" class="form-control pipein" readonly value="${player.lastName}" aria-describedby="sizing-addon2">
-					</div>
-					<br>
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon4">Position: </span>
-						<input type="text" class="form-control pipein" readonly value="${player.position}" aria-describedby="sizing-addon4">
-					</div>
-					<br>
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon5">Height: </span>
-						<input type="text" class="form-control pipein" readonly value="${player.height}" aria-describedby="sizing-addon5">
-					</div>
-					<br>
-					<div class="input-group input-group-lg">
-						<span class="input-group-addon" id="sizing-addon6">Games Played: </span>
-						<input type="text" class="form-control pipein" readonly value="${games}" aria-describedby="sizing-addon6">
-					</div>
+					<c:if test="${not empty player}">
+					    <div class="thumbnail">
+							<img class="img-responsive" src="<c:url value="/img/player_img.png"></c:url>" alt="player profile image" style="width:30; height:30"/>
+						</div> <!-- thumbnail -->
 						
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon3">Number: </span>
+							<input type="text" class="form-control pipein" readonly value="${player.playerNumber}" aria-describedby="sizing-addon3">
+						</div>
+						<br>
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon1">First Name: </span>
+							<input type="text" class="form-control pipein" readonly value="${player.firstName}" aria-describedby="sizing-addon1">
+						</div>
+						<br>
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon2">Last Name: </span>
+							<input type="text" class="form-control pipein" readonly value="${player.lastName}" aria-describedby="sizing-addon2">
+						</div>
+						<br>
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon4">Position: </span>
+							<input type="text" class="form-control pipein" readonly value="${player.position}" aria-describedby="sizing-addon4">
+						</div>
+						<br>
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon5">Height: </span>
+							<input type="text" class="form-control pipein" readonly value="${player.height}" aria-describedby="sizing-addon5">
+						</div>
+						<br>
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon" id="sizing-addon6">Games Played: </span>
+							<input type="text" class="form-control pipein" readonly value="${games}" aria-describedby="sizing-addon6">
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-md-12"><label>Download data</label> (open data in new tab)</div>
+						</div>
+						<div class="row">
+							<div class="col-md-1">
+								<a class="btn btn-default" href="<spring:url value="player.xml?id=${player.playerNumber}"/>" 
+									target="_blank" role="button">Xml</a>
+							</div>
+							<div class="col-md-1">
+								<a class="btn btn-default" href="<spring:url value="player.json?id=${player.playerNumber}"/>" 
+									target="_blank" role="button">Json</a>
+							</div>
+						</div>
+					</c:if>	
+					<c:if test="${empty player}"><h3>No Player Found</h3></c:if>	
 				</div> <!-- panel-body -->
 			</div> <!-- panel panel-default -->
 			

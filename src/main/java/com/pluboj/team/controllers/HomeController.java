@@ -1,10 +1,15 @@
 package com.pluboj.team.controllers;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.pluboj.team.domain.Player;
 import com.pluboj.team.service.PlayerService;
 
 @Controller
@@ -23,8 +28,9 @@ public class HomeController {
 		return "contact";
 	}
 	
-	@RequestMapping("/search")
+	@RequestMapping(value="/search")
 	public String search(Model model) {
+		
 		return "search";
 	}
 	
@@ -34,4 +40,5 @@ public class HomeController {
 		
 		return "team";
 	}
+	
 }
